@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zureside - Coming Soon</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zureside – Coming Soon</title>
+
+    <meta name="description" content="Zureside – something extraordinary is on the horizon." />
+
     <style>
         * {
             margin: 0;
@@ -12,7 +15,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #ffffff;
             min-height: 100vh;
@@ -20,7 +23,7 @@
             flex-direction: column;
         }
 
-        .container {
+        main {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -38,150 +41,97 @@
             margin-bottom: 1.5rem;
         }
 
-        .logo-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #00d4ff 0%, #ff00ff 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .logo-icon::before {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 8px;
-            background: white;
-            border-radius: 4px;
-            top: 25%;
-            left: 10%;
-        }
-
-        .logo-icon::after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 8px;
-            background: white;
-            border-radius: 4px;
-            bottom: 25%;
-            right: 10%;
-        }
-
-        .logo-diagonal {
-            position: absolute;
-            width: 70%;
-            height: 8px;
-            background: white;
-            border-radius: 4px;
-            transform: rotate(-45deg);
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.35));
         }
 
         .logo {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 700;
             letter-spacing: -0.02em;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .tagline {
             font-size: 1.25rem;
             font-weight: 300;
             margin-bottom: 3rem;
-            opacity: 0.95;
             max-width: 600px;
-            line-height: 1.6;
+            opacity: 0.95;
         }
 
         .coming-soon {
             background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1.5rem 3rem;
+            padding: 1.3rem 3rem;
             border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.25);
             margin-bottom: 3rem;
-        }
-
-        .contact {
-            font-size: 1rem;
-            opacity: 0.9;
+            text-transform: uppercase;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
         }
 
         .contact a {
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
             border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            transition: border-color 0.3s ease;
+            transition: 0.3s;
         }
 
         .contact a:hover {
-            border-bottom-color: #ffffff;
+            border-bottom-color: #fff;
         }
 
         footer {
             padding: 2rem;
             text-align: center;
-            font-size: 0.875rem;
-            background: rgba(0, 0, 0, 0.2);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .footer-links {
             display: flex;
-            justify-content: center;
             gap: 2rem;
-            margin-bottom: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
         .footer-links a {
             color: #ffffff;
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            opacity: 0.85;
+            transition: opacity 0.3s;
         }
 
         .footer-links a:hover {
             opacity: 1;
         }
 
-        .copyright {
-            opacity: 0.7;
-            margin-top: 1rem;
-        }
-
-        /* Modal styles */
+        /* Modal Styling */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
+            padding: 2rem;
             overflow-y: auto;
+            justify-content: center;
+            align-items: center;
         }
 
         .modal.active {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
         }
 
         .modal-content {
-            background: #ffffff;
+            background: #fff;
             color: #333;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 12px;
             max-width: 800px;
             width: 100%;
@@ -198,203 +148,115 @@
             border: none;
             font-size: 2rem;
             cursor: pointer;
-            color: #666;
-            line-height: 1;
-            padding: 0.5rem;
-        }
-
-        .modal-close:hover {
-            color: #000;
-        }
-
-        .modal-content h2 {
-            margin-bottom: 1.5rem;
-            color: #667eea;
-        }
-
-        .modal-content h3 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #333;
-        }
-
-        .modal-content p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
+            color: #555;
         }
 
         @media (max-width: 768px) {
-            .logo-icon {
-                width: 80px;
-                height: 80px;
+            .logo-img {
+                width: 90px;
             }
 
             .logo {
-                font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            .coming-soon {
-                padding: 1rem 2rem;
-                font-size: 0.95rem;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .modal-content {
-                padding: 2rem 1.5rem;
+                font-size: 2.4rem;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
+
+    <main>
         <div class="logo-container">
-            <div class="logo-icon">
-                <div class="logo-diagonal"></div>
-            </div>
+            <!-- Your repository logo file -->
+            <img src="Z Logo SVG (2).png" alt="Zureside Logo" class="logo-img">
+
             <div class="logo">zureside</div>
         </div>
+
         <div class="tagline">Something extraordinary is on the horizon</div>
+
         <div class="coming-soon">Coming Soon</div>
+
         <div class="contact">
             For inquiries: <a href="mailto:info@zureside.com">info@zureside.com</a>
         </div>
-    </div>
+    </main>
 
     <footer>
         <div class="footer-links">
-            <a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a>
-            <a href="#" onclick="openModal('imprint'); return false;">Imprint</a>
-            <a href="#" onclick="openModal('terms'); return false;">Terms of Use</a>
+            <a href="#" data-modal="privacy">Privacy Policy</a>
+            <a href="#" data-modal="imprint">Imprint</a>
+            <a href="#" data-modal="terms">Terms of Use</a>
         </div>
-        <div class="copyright">
-            © 2025 Zureside. All rights reserved.
-        </div>
+        <div>© 2025 Zureside. All rights reserved.</div>
     </footer>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacy" class="modal">
+    <!-- Modal Template: Privacy -->
+    <div id="privacy" class="modal" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('privacy')">&times;</button>
+            <button class="modal-close" aria-label="Close">&times;</button>
             <h2>Privacy Policy</h2>
             <p><strong>Last updated: October 2025</strong></p>
-            
-            <h3>1. Data Controller</h3>
-            <p>Zureside<br>
-            [Your Address]<br>
-            [City, Postal Code]<br>
-            Switzerland<br>
-            Email: info@zureside.com</p>
-
-            <h3>2. Data Collection</h3>
-            <p>This website currently collects minimal data. We may collect basic technical information such as IP addresses, browser type, and access times through server logs.</p>
-
-            <h3>3. Use of Data</h3>
-            <p>Any data collected is used solely for maintaining and improving our website functionality and security.</p>
-
-            <h3>4. Your Rights</h3>
-            <p>Under Swiss data protection law and GDPR (where applicable), you have the right to access, correct, delete, or restrict the processing of your personal data. You may also object to processing and request data portability.</p>
-
-            <h3>5. Contact</h3>
-            <p>For any privacy-related questions or to exercise your rights, please contact us at info@zureside.com</p>
+            <p>...</p>
         </div>
     </div>
 
-    <!-- Imprint Modal -->
-    <div id="imprint" class="modal">
+    <!-- Modal Template: Imprint -->
+    <div id="imprint" class="modal" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('imprint')">&times;</button>
+            <button class="modal-close" aria-label="Close">&times;</button>
             <h2>Imprint</h2>
-            
-            <h3>Information according to Swiss law</h3>
-            <p><strong>Zureside</strong><br>
-            [Your Company Name/Legal Form]<br>
-            [Street Address]<br>
-            [Postal Code] [City]<br>
-            Switzerland</p>
-
-            <h3>Contact</h3>
-            <p>Email: info@zureside.com<br>
-            Phone: [Your Phone Number]</p>
-
-            <h3>Commercial Register</h3>
-            <p>Register Entry: [If applicable]<br>
-            Registration Number: [If applicable]<br>
-            VAT Number: CHE-[If applicable]</p>
-
-            <h3>Responsible for Content</h3>
-            <p>[Name of responsible person]</p>
-
-            <h3>Disclaimer</h3>
-            <p>The content of this website has been compiled with meticulous care and to the best of our knowledge. However, we cannot assume any liability for the up-to-dateness, completeness or accuracy of any of the pages.</p>
+            <p>...</p>
         </div>
     </div>
 
-    <!-- Terms of Use Modal -->
-    <div id="terms" class="modal">
+    <!-- Modal Template: Terms -->
+    <div id="terms" class="modal" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('terms')">&times;</button>
+            <button class="modal-close" aria-label="Close">&times;</button>
             <h2>Terms of Use</h2>
-            <p><strong>Last updated: October 2025</strong></p>
-
-            <h3>1. Acceptance of Terms</h3>
-            <p>By accessing this website, you agree to be bound by these Terms of Use and all applicable laws and regulations.</p>
-
-            <h3>2. Use License</h3>
-            <p>Permission is granted to temporarily view the materials on this website for personal, non-commercial transitory viewing only.</p>
-
-            <h3>3. Disclaimer</h3>
-            <p>The materials on this website are provided on an 'as is' basis. Zureside makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
-
-            <h3>4. Limitations</h3>
-            <p>In no event shall Zureside or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website.</p>
-
-            <h3>5. Governing Law</h3>
-            <p>These terms and conditions are governed by and construed in accordance with the laws of Switzerland, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+            <p>...</p>
         </div>
     </div>
 
     <script>
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
+        // Open modals
+        document.querySelectorAll("[data-modal]").forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const modal = document.getElementById(link.dataset.modal);
+                if (modal) modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            });
+        });
 
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
+        // Close modals via close button
+        document.querySelectorAll(".modal-close").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const modal = btn.closest(".modal");
+                modal.classList.remove("active");
+                document.body.style.overflow = "";
+            });
+        });
 
-        // Close modal when clicking outside
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeModal(this.id);
+        // Close modal by clicking background
+        document.querySelectorAll(".modal").forEach(modal => {
+            modal.addEventListener("click", e => {
+                if (e.target === modal) {
+                    modal.classList.remove("active");
+                    document.body.style.overflow = "";
                 }
             });
         });
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal.active').forEach(modal => {
-                    closeModal(modal.id);
-                });
+        // ESC to close
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") {
+                document.querySelectorAll(".modal.active").forEach(m => m.classList.remove("active"));
+                document.body.style.overflow = "";
             }
         });
     </script>
+
 </body>
 </html>
