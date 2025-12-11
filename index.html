@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zureside - Guiding Trust, Powering Growth</title>
+    <title>Zureside - Coming Soon</title>
     <style>
         * {
             margin: 0;
@@ -12,767 +12,388 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background: #fefdfb;
-            min-height: 100vh;
-        }
-
-        /* Header */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            height: 80px;
-        }
-
-        .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: #2d3748;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #2d3748;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .language-toggle {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .language-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-button {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
-
-        .hamburger-line {
-            width: 100%;
-            height: 3px;
-            background-color: #2d3748;
-            margin: 3px 0;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .mobile-menu-button.active .hamburger-line:nth-child(1) {
-            transform: rotate(0deg) translate(0px, 6px);
-        }
-
-        .mobile-menu-button.active .hamburger-line:nth-child(2) {
-            transform: rotate(45deg) translate(0px, 0px);
-            opacity: 1;
-        }
-
-        .mobile-menu-button.active .hamburger-line:nth-child(3) {
-            transform: rotate(0deg) translate(0px, -6px);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 80px;
-            right: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            padding: 1rem 0;
-            min-width: 200px;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(-20px) scale(0.95);
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        .mobile-menu.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 0.75rem 1.5rem;
-            color: #2d3748;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            transform: translateX(-20px);
-            opacity: 0;
-        }
-
-        .mobile-menu.active a {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .mobile-menu.active a:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .mobile-menu.active a:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-
-        .mobile-menu.active a:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-
-        .mobile-menu a:hover {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-            transform: translateX(5px);
-        }
-
-        /* Hero Section */
-        .hero {
+            color: #ffffff;
             min-height: 100vh;
-            background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 25%, #EC4899 50%, #FF69B4 75%, #F472B6 100%);
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            padding: 0 2rem;
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 6rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            line-height: 1.1;
-            background: linear-gradient(45deg, #FF00B8, #00D4FF, #7C3AED, #FF00B8);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 400% 400%;
-            animation: gradientShift 20s ease-in-out infinite;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 0;
-            background: #fefdfb;
+            flex-direction: column;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
             text-align: center;
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 3rem;
-            color: #2d3748;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
-        }
-
-        /* Individuelle Hover-Effekte für jede Karte */
-        .service-card:nth-child(1):hover {
-            background: rgba(139, 92, 246, 0.15); /* Dunkelblau transparent */
-        }
-
-        .service-card:nth-child(2):hover {
-            background: rgba(168, 85, 247, 0.15); /* Helleres Blau transparent */
-        }
-
-        .service-card:nth-child(3):hover {
-            background: rgba(236, 72, 153, 0.15); /* Lila transparent */
-        }
-
-        .service-card:nth-child(4):hover {
-            background: rgba(255, 105, 180, 0.15); /* Rosa transparent */
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
+        }
+
+        .logo-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #00d4ff 0%, #ff00ff 100%);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            overflow: hidden;
-        }
-
-        .service-icon svg {
-            width: 40px;
-            height: 40px;
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #2d3748;
-        }
-
-        .service-card p {
-            color: #718096;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 25%, #EC4899 50%, #FF69B4 75%, #F472B6 100%);
-            color: white;
-            padding: 3rem 0 1rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 8px;
+            background: white;
+            border-radius: 4px;
+            top: 25%;
+            left: 10%;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 2rem;
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 8px;
+            background: white;
+            border-radius: 4px;
+            bottom: 25%;
+            right: 10%;
         }
 
-        .footer-section h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: white;
+        .logo-diagonal {
+            position: absolute;
+            width: 70%;
+            height: 8px;
+            background: white;
+            border-radius: 4px;
+            transform: rotate(-45deg);
         }
 
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.9);
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 600px;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        .contact {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            transition: border-color 0.3s ease;
+        }
+
+        .contact a:hover {
+            border-bottom-color: #ffffff;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.9);
+            color: #ffffff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: rgba(255, 255, 255, 1);
-        }
-
-        /* Accordion functionality */
-        .accordion-header {
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            user-select: none;
-        }
-
-        .accordion-icon {
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.6s ease;
-            opacity: 0;
-        }
-
-        .accordion-content.active {
-            max-height: 300px;
             opacity: 1;
-            padding: 1rem 0;
         }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            padding-top: 2rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.9);
+        .copyright {
+            opacity: 0.7;
+            margin-top: 1rem;
         }
 
-        /* Responsive Design */
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            color: #333;
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            line-height: 1;
+            padding: 0.5rem;
+        }
+
+        .modal-close:hover {
+            color: #000;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        .modal-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .modal-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .logo-icon {
+                width: 80px;
+                height: 80px;
             }
 
-            .mobile-menu-button {
-                display: flex;
+            .logo {
+                font-size: 2.5rem;
             }
 
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .hero-subtitle {
+            .tagline {
                 font-size: 1.1rem;
-                padding: 0 1rem;
             }
 
-            .hero-buttons {
+            .coming-soon {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .footer-links {
                 flex-direction: column;
                 gap: 1rem;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-                margin-bottom: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .service-card {
-                padding: 2rem;
-            }
-
-            .cta-button {
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
+            .modal-content {
+                padding: 2rem 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                    <svg class="logo-svg" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#00D4FF"/>
-                                <stop offset="50%" style="stop-color:#6366F1"/>
-                                <stop offset="100%" style="stop-color:#FF00B8"/>
-                            </linearGradient>
-                        </defs>
-                        <!-- Top horizontal bar -->
-                        <rect x="300" y="250" width="424" height="120" rx="60" fill="url(#logoGradient)"/>
-                        <!-- Diagonal middle bar -->
-                        <rect x="400" y="400" width="320" height="120" rx="60" fill="url(#logoGradient)" transform="rotate(-30 560 460)"/>
-                        <!-- Bottom horizontal bar -->
-                        <rect x="300" y="654" width="424" height="120" rx="60" fill="url(#logoGradient)"/>
-                    </svg>
-                </div>
-                <span class="logo-text">zureside</span>
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-button" onclick="toggleMobileMenu()">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-
-            <!-- Mobile Menu -->
-            <div class="mobile-menu" id="mobileMenu">
-                <a href="#services" onclick="closeMobileMenu()">Services</a>
-                <a href="#about" onclick="closeMobileMenu()">About</a>
-                <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <div class="logo-diagonal"></div>
             </div>
-
-            <button class="language-toggle">EN / DE</button>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Guiding Trust, Powering Growth</h1>
-            <p class="hero-subtitle">Wir helfen Unternehmen, komplexe Compliance-Anforderungen einfach zu meistern – mit OneTrust-Technologie und skalierbarer Beratung.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="cta-button">ROI berechnen</a>
-                <a href="#services" class="cta-button">Demo buchen</a>
-            </div>
+            <div class="logo">zureside</div>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Unsere Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#8B5CF6"/>
-                                    <stop offset="50%" style="stop-color:#A855F7"/>
-                                    <stop offset="100%" style="stop-color:#EC4899"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M153.6 304.128c0-68.608 55.808-124.416 124.416-124.416h466.944c68.608 0 124.416 55.808 124.416 124.416v261.12c0 197.632-124.416 322.048-307.2 378.368-182.784-56.32-307.2-180.736-307.2-378.368V304.128z" fill="white" stroke="none"/>
-                            <path d="M461.824 440.32l82.944 82.944 165.888-165.888" fill="none" stroke="url(#shieldGradient)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Unsere Lösungen</h3>
-                    <p>Transformieren Sie Ihre Compliance-Strategie mit der umfassenden OneTrust-Plattform. Von Datenschutz-Management bis zur Risikobewertung bieten wir durchgängige Compliance-Automatisierung, die mit Ihren Geschäftsanforderungen skaliert. Unser integrierter Ansatz stellt sicher, dass Sie regulatorischen Anforderungen voraus sind und gleichzeitig die operative Komplexität reduzieren.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="puzzleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#8B5CF6"/>
-                                    <stop offset="50%" style="stop-color:#A855F7"/>
-                                    <stop offset="100%" style="stop-color:#EC4899"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M291.2 397.824h186.368c20.48 0 37.376 16.896 37.376 37.376v74.752c41.472 0 74.752 33.28 74.752 74.752s-33.28 74.752-74.752 74.752v74.752c0 20.48-16.896 37.376-37.376 37.376H291.2c-20.48 0-37.376-16.896-37.376-37.376V547.328c-41.472 0-74.752-33.28-74.752-74.752s33.28-74.752 74.752-74.752v-37.376c0-20.48 16.896-37.376 37.376-37.376z" fill="white" stroke="url(#puzzleGradient)" stroke-width="24" stroke-linejoin="round"/>
-                            <path d="M552.96 248.832h186.368c20.48 0 37.376 16.896 37.376 37.376v111.616h74.752c41.472 0 74.752 33.28 74.752 74.752s-33.28 74.752-74.752 74.752h-74.752v111.616c0 20.48-16.896 37.376-37.376 37.376H552.96c-20.48 0-37.376-16.896-37.376-37.376v-74.752c41.472 0 74.752-33.28 74.752-74.752s-33.28-74.752-74.752-74.752v-148.48c0-20.48 16.896-37.376 37.376-37.376z" fill="white" stroke="url(#puzzleGradient)" stroke-width="24" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Unsere Partner</h3>
-                    <p>Als zertifizierter OneTrust-Partner in der Schweiz bringen wir Ihnen Compliance-Technologie der Weltklasse. OneTrust ist der globale Marktführer für Trust Intelligence Plattformen und wird von über 14.000 Kunden weltweit vertraut. Gemeinsam liefern wir bewährte Lösungen, die Datenschutz-, Sicherheits- und Ethikprogramme mit messbarem Geschäftserfolg automatisieren.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#8B5CF6"/>
-                                    <stop offset="50%" style="stop-color:#A855F7"/>
-                                    <stop offset="100%" style="stop-color:#EC4899"/>
-                                </linearGradient>
-                            </defs>
-                            <rect x="179.2" y="599.04" width="149.504" height="186.88" rx="24" fill="white" stroke="url(#chartGradient)" stroke-width="24"/>
-                            <rect x="403.456" y="486.4" width="149.504" height="299.52" rx="24" fill="white" stroke="url(#chartGradient)" stroke-width="24"/>
-                            <rect x="627.712" y="373.76" width="149.504" height="412.16" rx="24" fill="white" stroke="url(#chartGradient)" stroke-width="24"/>
-                            <path d="M253.952 373.76l149.504-112.128 224.256 149.504 186.88-149.504" fill="none" stroke="url(#chartGradient)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="m739.328 298.496 37.376-37.376 37.376 37.376-37.376 37.376z" fill="url(#chartGradient)"/>
-                        </svg>
-                    </div>
-                    <h3>ROI berechnen</h3>
-                    <p>Entdecken Sie die finanziellen Auswirkungen moderner Compliance-Automatisierung. Unser ROI-Rechner hilft Ihnen, Einsparungen durch reduzierte manuelle Prozesse, schnellere Audit-Zyklen und minimierte Compliance-Risiken zu quantifizieren. Sehen Sie, wie Organisationen typischerweise 300% ROI innerhalb von 12 Monaten erreichen und gleichzeitig ihre Risikolage und operative Effizienz deutlich verbessern.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="targetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#8B5CF6"/>
-                                    <stop offset="50%" style="stop-color:#A855F7"/>
-                                    <stop offset="100%" style="stop-color:#EC4899"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="512" cy="512" r="324.608" fill="white" stroke="url(#targetGradient)" stroke-width="48"/>
-                            <circle cx="512" cy="512" r="224.256" fill="white" stroke="url(#targetGradient)" stroke-width="32"/>
-                            <circle cx="512" cy="512" r="123.904" fill="white" stroke="url(#targetGradient)" stroke-width="24"/>
-                            <circle cx="512" cy="512" r="49.152" fill="url(#targetGradient)"/>
-                            <path d="M512 187.392V62.464l74.752 74.752-74.752 74.752V137.216" fill="url(#targetGradient)" stroke="url(#targetGradient)" stroke-width="16" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Demo anfordern</h3>
-                    <p>Erleben Sie die Macht der OneTrust-Plattform aus erster Hand. Unsere maßgeschneiderten Demonstrationen zeigen, wie führende Organisationen ihre Compliance-Abläufe optimieren, Audit-Zeit um bis zu 75% reduzieren und kontinuierliche regulatorische Bereitschaft erreichen. Planen Sie Ihre personalisierte Demo und sehen Sie, warum Compliance-Teams OneTrust für ihre digitale Transformation wählen.</p>
-                </div>
-            </div>
+        <div class="tagline">Something extraordinary is on the horizon</div>
+        <div class="coming-soon">Coming Soon</div>
+        <div class="contact">
+            For inquiries: <a href="mailto:info@zureside.com">info@zureside.com</a>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>zureside</h3>
-                    <p>Verankert in der Schweiz, ausgerichtet auf Ihre Zukunft.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <div class="accordion-header" onclick="toggleAccordion('legal')">
-                        <h3>Rechtliches</h3>
-                        <span class="accordion-icon">▼</span>
-                    </div>
-                    <div class="accordion-content" id="legal">
-                        <ul class="footer-links">
-                            <li><a href="#">Impressum</a></li>
-                            <li><a href="#">Datenschutzerklärung</a></li>
-                            <li><a href="#">Cookie-Einstellungen</a></li>
-                            <li><a href="#">AGB</a></li>
-                            <li><a href="#">Haftungsausschluss</a></li>
-                            <li><a href="#">Urheberrecht</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <div class="accordion-header" onclick="toggleAccordion('contact')">
-                        <h3>Kontakt</h3>
-                        <span class="accordion-icon">▼</span>
-                    </div>
-                    <div class="accordion-content" id="contact">
-                        <ul class="footer-links">
-                            <li><a href="mailto:info@zureside.com">info@zureside.com</a></li>
-                            <li><a href="tel:+41441234567">+41 44 123 45 67</a></li>
-                            <li><a href="#">LinkedIn</a></li>
-                            <li><a href="#">Zürich, Switzerland</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 zureside GmbH. All rights reserved.</p>
-            </div>
+    <footer>
+        <div class="footer-links">
+            <a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a>
+            <a href="#" onclick="openModal('imprint'); return false;">Imprint</a>
+            <a href="#" onclick="openModal('terms'); return false;">Terms of Use</a>
+        </div>
+        <div class="copyright">
+            © 2025 Zureside. All rights reserved.
         </div>
     </footer>
 
+    <!-- Privacy Policy Modal -->
+    <div id="privacy" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('privacy')">&times;</button>
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated: October 2025</strong></p>
+            
+            <h3>1. Data Controller</h3>
+            <p>Zureside<br>
+            [Your Address]<br>
+            [City, Postal Code]<br>
+            Switzerland<br>
+            Email: info@zureside.com</p>
+
+            <h3>2. Data Collection</h3>
+            <p>This website currently collects minimal data. We may collect basic technical information such as IP addresses, browser type, and access times through server logs.</p>
+
+            <h3>3. Use of Data</h3>
+            <p>Any data collected is used solely for maintaining and improving our website functionality and security.</p>
+
+            <h3>4. Your Rights</h3>
+            <p>Under Swiss data protection law and GDPR (where applicable), you have the right to access, correct, delete, or restrict the processing of your personal data. You may also object to processing and request data portability.</p>
+
+            <h3>5. Contact</h3>
+            <p>For any privacy-related questions or to exercise your rights, please contact us at info@zureside.com</p>
+        </div>
+    </div>
+
+    <!-- Imprint Modal -->
+    <div id="imprint" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('imprint')">&times;</button>
+            <h2>Imprint</h2>
+            
+            <h3>Information according to Swiss law</h3>
+            <p><strong>Zureside</strong><br>
+            [Your Company Name/Legal Form]<br>
+            [Street Address]<br>
+            [Postal Code] [City]<br>
+            Switzerland</p>
+
+            <h3>Contact</h3>
+            <p>Email: info@zureside.com<br>
+            Phone: [Your Phone Number]</p>
+
+            <h3>Commercial Register</h3>
+            <p>Register Entry: [If applicable]<br>
+            Registration Number: [If applicable]<br>
+            VAT Number: CHE-[If applicable]</p>
+
+            <h3>Responsible for Content</h3>
+            <p>[Name of responsible person]</p>
+
+            <h3>Disclaimer</h3>
+            <p>The content of this website has been compiled with meticulous care and to the best of our knowledge. However, we cannot assume any liability for the up-to-dateness, completeness or accuracy of any of the pages.</p>
+        </div>
+    </div>
+
+    <!-- Terms of Use Modal -->
+    <div id="terms" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('terms')">&times;</button>
+            <h2>Terms of Use</h2>
+            <p><strong>Last updated: October 2025</strong></p>
+
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing this website, you agree to be bound by these Terms of Use and all applicable laws and regulations.</p>
+
+            <h3>2. Use License</h3>
+            <p>Permission is granted to temporarily view the materials on this website for personal, non-commercial transitory viewing only.</p>
+
+            <h3>3. Disclaimer</h3>
+            <p>The materials on this website are provided on an 'as is' basis. Zureside makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+
+            <h3>4. Limitations</h3>
+            <p>In no event shall Zureside or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website.</p>
+
+            <h3>5. Governing Law</h3>
+            <p>These terms and conditions are governed by and construed in accordance with the laws of Switzerland, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+        </div>
+    </div>
+
     <script>
-        function toggleAccordion(id) {
-            const content = document.getElementById(id);
-            const icon = content.previousElementSibling.querySelector('.accordion-icon');
-            
-            // Close all other accordions first
-            const allContents = document.querySelectorAll('.accordion-content');
-            const allIcons = document.querySelectorAll('.accordion-icon');
-            
-            allContents.forEach((item) => {
-                if (item.id !== id && item.classList.contains('active')) {
-                    item.classList.remove('active');
-                }
-            });
-            
-            allIcons.forEach((iconEl) => {
-                if (iconEl !== icon) {
-                    iconEl.style.transform = 'rotate(0deg)';
-                }
-            });
-            
-            // Toggle current accordion
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                content.classList.add('active');
-                icon.style.transform = 'rotate(180deg)';
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
         }
 
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuButton = document.querySelector('.mobile-menu-button');
-            
-            mobileMenu.classList.toggle('active');
-            menuButton.classList.toggle('active');
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         }
 
-        function closeMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuButton = document.querySelector('.mobile-menu-button');
-            
-            mobileMenu.classList.remove('active');
-            menuButton.classList.remove('active');
-        }
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('zureside - Vollständige Website mit funktionierenden Icons geladen!');
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const mobileMenu = document.getElementById('mobileMenu');
-                const menuButton = document.querySelector('.mobile-menu-button');
-                
-                if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
-                    closeMobileMenu();
-                }
-            });
-            
-            // Close mobile menu on window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    closeMobileMenu();
-                }
-            });
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
         });
     </script>
 </body>
